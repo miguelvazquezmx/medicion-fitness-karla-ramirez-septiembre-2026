@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resumen fitness de Karla Ramírez Salas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14262B;
+    --paper:#F3F6F5;
+    --petrol:#0E3A47;
+    --sea:#5CCBB8;
+    --sea-ink:#17695F;
+    --amber:#E9A23B;
+    --amber-ink:#8A5A0B;
+    --slate:#55676C;
+    --line:#D3DDDA;
+    --display:"Bricolage Grotesque","Trebuchet MS","Segoe UI",system-ui,sans-serif;
+    --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--text);font-size:1.0625rem;line-height:1.7;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+  h1,h2,h3{font-family:var(--display);margin:0;line-height:1.12;letter-spacing:-.015em}
+  p{margin:0 0 1rem}
+
+  /* Hero */
+  .hero{
+    background:var(--petrol);color:#fff;
+    padding:clamp(2.5rem,7vw,5rem) 0 clamp(2.5rem,6vw,4rem);
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;
+  }
+  .hero .kicker{font-family:var(--display);font-weight:500;color:#BFD9DB;margin:0 0 1.25rem;font-size:1rem}
+  .hero h1{font-weight:800;font-size:clamp(2.2rem,6.2vw,4.1rem);max-width:17em;letter-spacing:-.025em}
+  .hero .who{color:#D7E7E7;margin:1.5rem 0 0;max-width:34rem;font-size:1.05rem}
+  .hero .who strong{color:#fff;font-weight:600}
+
+  .bars{margin-top:clamp(2rem,5vw,3.25rem)}
+  .legend{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:var(--display);font-size:.9rem;color:#D7E7E7;margin-bottom:1rem}
+  .legend span{display:inline-flex;align-items:center;gap:.5rem}
+  .sw{width:.85rem;height:.85rem;border-radius:2px;display:inline-block}
+  .sw.fat{background:var(--amber)}
+  .sw.lean{background:var(--sea)}
+  .barrow{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:center;margin-bottom:.9rem}
+  .barlabel{font-family:var(--display);font-size:.9rem;line-height:1.3;color:#BFD9DB}
+  .barlabel strong{display:block;color:#fff;font-size:1.3rem;font-weight:700}
+  .track{display:flex;width:100%;height:3.4rem;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden}
+  .seg{
+    height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;white-space:nowrap;
+    font-family:var(--display);font-weight:700;font-size:1rem;color:var(--petrol);
+    width:calc(var(--w) * 1%);
+    animation:grow 1.3s cubic-bezier(.2,.7,.2,1) both;
+  }
+  .seg.fat{background:var(--amber)}
+  .seg.lean{background:var(--sea);animation-delay:.12s}
+  .scale{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;font-family:var(--display);font-size:.8rem;color:#9DBFC3}
+  .scale div{display:flex;justify-content:space-between}
+  @keyframes grow{from{width:0}}
+  @media (prefers-reduced-motion:reduce){.seg{animation:none}}
+  @media (max-width:560px){
+    .barrow,.scale{grid-template-columns:1fr;gap:.35rem}
+    .scale > span{display:none}
+    .barlabel strong{display:inline;margin-left:.5rem}
+  }
+
+  /* Sections */
+  .sec{
+    display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;
+    padding:3rem 0;border-top:1px solid var(--line);
+  }
+  .sec:first-of-type{border-top:0}
+  .sec h2{font-size:1.55rem;font-weight:700}
+  @media (min-width:860px){
+    .sec{grid-template-columns:minmax(0,13.5rem) minmax(0,1fr);gap:3.5rem}
+    .sec h2{position:sticky;top:1.5rem;align-self:start}
+  }
+  .body{max-width:40rem}
+  .body.wide{max-width:none}
+
+  /* Comparison table */
+  .tablewrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:1rem;line-height:1.4}
+  caption{text-align:left;color:var(--slate);font-size:.95rem;padding-bottom:.9rem}
+  th{
+    font-family:var(--display);font-weight:500;font-size:.9rem;color:var(--slate);
+    text-align:right;padding:.5rem .6rem;border-bottom:2px solid var(--ink);
+  }
+  th:first-child{text-align:left;padding-left:0}
+  td{padding:.85rem .6rem;border-bottom:1px solid var(--line);text-align:right;vertical-align:top;font-variant-numeric:tabular-nums}
+  td:first-child{text-align:left;padding-left:0;font-family:var(--display);font-weight:700;font-size:1rem}
+  td:first-child small{display:block;font-family:var(--text);font-weight:400;font-size:.88rem;color:var(--slate);margin-top:.15rem;line-height:1.35}
+  td.chg{font-family:var(--display);font-weight:700;padding-right:0;white-space:nowrap}
+  .good{color:var(--sea-ink)}
+  .watch{color:var(--amber-ink)}
+  .flat{color:var(--slate)}
+  .note{font-size:.9rem;color:var(--slate);margin-top:1rem}
+
+  /* Change in kilos: bars diverging from a zero line */
+  .dv{margin:1.5rem 0 1.75rem}
+  .dvrow{margin-bottom:1.1rem}
+  .dvlabel{font-family:var(--display);font-size:.95rem;margin-bottom:.35rem}
+  .dvlabel strong{margin-left:.5rem;font-size:1.05rem}
+  .dvtrack{display:grid;grid-template-columns:20% 80%;height:2.2rem}
+  .dvtrack .neg{display:flex;justify-content:flex-end}
+  .dvtrack .pos{display:flex;border-left:2px solid var(--ink)}
+  .dvbar{display:block;height:100%;border-radius:2px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .dvbar.fat{background:var(--amber)}
+  .dvbar.lean{background:var(--sea)}
+  .dvscale{display:grid;grid-template-columns:20% 80%;font-family:var(--display);font-size:.8rem;color:var(--slate)}
+  .dvscale .r{display:flex;justify-content:space-between}
+  .dvscale .r span:first-child{transform:translateX(-.35rem)}
+
+  /* Text patterns */
+  .lead-in{font-family:var(--display);font-weight:700}
+  .body p.lead-p{margin-bottom:1.15rem}
+  dl{margin:0}
+  dt{font-family:var(--display);font-weight:700;margin-top:1.25rem}
+  dt:first-child{margin-top:0}
+  dd{margin:.2rem 0 0}
+  ul.checks{list-style:none;padding:0;margin:0}
+  ul.checks li{position:relative;padding-left:1.9rem;margin-bottom:.55rem}
+  ul.checks li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    font-family:var(--display);font-weight:800;color:var(--sea-ink);
+  }
+
+  /* Closing */
+  .closing{background:var(--petrol);color:#fff;padding:clamp(2.5rem,6vw,4rem) 0;margin-top:1rem;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .closing p{font-family:var(--display);font-weight:500;font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.4;max-width:34em;letter-spacing:-.005em}
+  .closing .sign{font-family:var(--display);font-size:1rem;color:#BFD9DB;margin-top:1.75rem}
+  .closing .sign strong{display:block;color:#fff;font-size:1.35rem}
+  footer{padding:1.75rem 0 2.5rem;font-size:.85rem;color:var(--slate);line-height:1.55}
+  footer p{max-width:46rem}
+
+  @media print{
+    body{font-size:10.5pt}
+    .sec{break-inside:avoid;padding:1.6rem 0}
+    .sec h2{position:static}
+    .hero{padding:1.5rem 0}
+    .seg{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Resumen de valoración corporal</p>
+    <h1>Sra. Martínez, en estos par de meses usted ya se ve y se siente más fuerte.</h1>
+    <p class="who"><strong>Karla Ramírez Salas</strong><br>
+      Mediciones de mayo y de septiembre de 2026<br>
+      Preparado por Miguel Vázquez | Personal Trainer</p>
+
+    <div class="bars" role="group" aria-label="Composición corporal en mayo y en septiembre">
+      <div class="legend">
+        <span><i class="sw fat"></i>Masa grasa</span>
+        <span><i class="sw lean"></i>Masa libre de grasa (músculo, agua, huesos y órganos)</span>
+      </div>
+
+      <div class="barrow">
+        <div class="barlabel">Mayo <strong>66.1 kg</strong></div>
+        <div class="track">
+          <div class="seg fat" style="--w:34.6">27.7 kg</div>
+          <div class="seg lean" style="--w:48.0">38.4 kg</div>
+        </div>
+      </div>
+
+      <div class="barrow">
+        <div class="barlabel">Septiembre <strong>68.3 kg</strong></div>
+        <div class="track">
+          <div class="seg fat" style="--w:37.9">30.3 kg</div>
+          <div class="seg lean" style="--w:47.5">38.0 kg</div>
+        </div>
+      </div>
+
+      <div class="scale" aria-hidden="true">
+        <span></span>
+        <div><span>0 kg</span><span>40 kg</span><span>80 kg</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="sec">
+    <h2>Una nota antes de los números</h2>
+    <div class="body">
+      <p class="lead-p">Sra. Martínez, le comparto la comparativa de datos de composición corporal entre mayo y septiembre del año en curso.</p>
+      <p class="lead-p">En estos par de meses ya pasaron cosas buenas: usted levanta más peso que al inicio, se ve más definida y se muestra con más seguridad. Quiero ser honesto con usted: en esta ocasión los números de la báscula no reflejan lo que vemos en persona, y por eso quise explicarle con claridad qué significan y qué haremos para confirmarlo.</p>
+      <p>Lo hacemos, como siempre decimos, primero por su salud, y lo estético viene de añadidura.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Sus números, lado a lado</h2>
+    <div class="body wide">
+      <div class="tablewrap">
+        <table>
+          <caption>Báscula de bioimpedancia Omron HBF-514C. Estatura: 156 cm.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Parámetro</th>
+              <th scope="col">Mayo</th>
+              <th scope="col">Septiembre</th>
+              <th scope="col">Cambio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Peso<small>Subió 2.2 kg; abajo vemos de qué está hecho</small></td>
+              <td>66.1 kg</td><td>68.3 kg</td>
+              <td class="chg watch">+2.2 kg</td>
+            </tr>
+            <tr>
+              <td>Índice de masa corporal (IMC)*<small>Referencia general; no distingue músculo de grasa</small></td>
+              <td>27.2</td><td>28.1</td>
+              <td class="chg watch">+0.9</td>
+            </tr>
+            <tr>
+              <td>Grasa corporal<small>La cifra que más nos interesa mejorar; la variación incluye el margen de error del equipo</small></td>
+              <td>41.9 %</td><td>44.3 %</td>
+              <td class="chg watch">+2.4 puntos</td>
+            </tr>
+            <tr>
+              <td>Masa grasa*<small>El foco de la siguiente etapa</small></td>
+              <td>27.7 kg</td><td>30.3 kg</td>
+              <td class="chg watch">+2.6 kg</td>
+            </tr>
+            <tr>
+              <td>Masa libre de grasa*<small>Incluye músculo, agua, huesos y órganos; diferencia pequeña</small></td>
+              <td>38.4 kg</td><td>38.0 kg</td>
+              <td class="chg flat">−0.4 kg</td>
+            </tr>
+            <tr>
+              <td>Músculo esquelético (porcentaje)<small>Baja en buena parte porque el peso total subió</small></td>
+              <td>24.6 %</td><td>23.3 %</td>
+              <td class="chg flat">−1.3 puntos</td>
+            </tr>
+            <tr>
+              <td>Músculo esquelético (kilos)*<small>Diferencia pequeña, dentro del margen del equipo</small></td>
+              <td>16.3 kg</td><td>15.9 kg</td>
+              <td class="chg flat">−0.4 kg</td>
+            </tr>
+            <tr>
+              <td>Grasa visceral<small>En el rango saludable del equipo (1 a 9) y estable: una muy buena noticia</small></td>
+              <td>7</td><td>7</td>
+              <td class="chg good">Sin cambio</td>
+            </tr>
+            <tr>
+              <td>Edad corporal<small>Estimación del equipo, no un diagnóstico</small></td>
+              <td>48</td><td>50</td>
+              <td class="chg flat">+2</td>
+            </tr>
+            <tr>
+              <td>Metabolismo basal<small>En mayo no se registró; desde ahora lo llevamos en cada medición</small></td>
+              <td aria-label="Sin registro">—</td><td>1,338 kcal</td>
+              <td class="chg flat">—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">* Valores calculados a partir de sus datos (peso × porcentaje); pueden variar ±0.1 kg por redondeo. Son aproximaciones para seguir la tendencia.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Lo que hay detrás de los 2.2 kg</h2>
+    <div class="body">
+      <div class="dv" role="img" aria-label="Cambio en kilos entre mayo y septiembre: masa grasa más 2.6 kg, masa libre de grasa menos 0.4 kg">
+        <div class="dvrow">
+          <div class="dvlabel">Masa grasa <strong class="watch">+2.6 kg</strong></div>
+          <div class="dvtrack"><div class="neg"></div><div class="pos"><i class="dvbar fat" style="width:86.7%"></i></div></div>
+        </div>
+        <div class="dvrow">
+          <div class="dvlabel">Masa libre de grasa <strong class="flat">−0.4 kg</strong></div>
+          <div class="dvtrack"><div class="neg"><i class="dvbar lean" style="width:53.3%"></i></div><div class="pos"></div></div>
+        </div>
+        <div class="dvscale" aria-hidden="true">
+          <div></div>
+          <div class="r"><span>0</span><span>+3 kg</span></div>
+        </div>
+      </div>
+
+      <p>Según la báscula, el aumento de 2.2 kg en su peso se reparte en unos 2.6 kg más de masa grasa y una ligera baja de unos 0.4 kg en masa libre de grasa.</p>
+      <p>Esto no coincide con lo que veo en persona: más definición, más fuerza y una figura más marcada. Puede haber varias razones. La bioimpedancia se mueve con el agua que el cuerpo retiene a lo largo del mes, la hora del día, lo que se comió antes y el ejercicio previo, y a veces esas variaciones bastan para mover un par de puntos.
+      A mí todo mi figura a que fuera del gimnasio usted está haciendo lo correspondiente y lo que está en su cancha, por eso físicamente y en porcentajes de pesos y fuerza en los entrenamientos han mejorado drásticamente.</p>
+      <p>Por eso no vamos a sacar conclusiones con una sola comparación: vamos a repetir la medición con un protocolo estricto y a apoyarnos, mientras tanto, en señales que la báscula no ve.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Cómo leer estos números</h2>
+    <div class="body">
+      <p><span class="lead-in">La báscula es útil, pero tiene margen de error.</span> Mide cómo pasa una corriente muy pequeña por su cuerpo, y eso cambia con el agua, la comida, el ejercicio previo, la hora del día y las fases del ciclo menstrual.</p>
+  
+      <p><span class="lead-in">El IMC es una referencia general.</span> No distingue músculo de grasa; en su caso, el porcentaje de grasa y sus medidas nos dicen mucho más.</p>
+      <p><span class="lead-in">La báscula no lo ve todo.</span> Su fuerza, sus medidas, cómo le queda la ropa y cómo se siente también son progreso, y vamos a registrarlos.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Lo que ya está logrando</h2>
+    <div class="body">
+      <p><span class="lead-in">Su fuerza aumentó.</span> Hoy levanta más peso que al inicio. La fuerza es una medida directa de cómo trabaja su cuerpo y no depende de la báscula.</p>
+      <p><span class="lead-in">Se nota en persona.</span> Se ve más definida y más magra a simple vista, y su postura y su presencia han cambiado.</p>
+      <p><span class="lead-in">Se muestra con más seguridad.</span> Sus outfits han cambiado, y ese cambio habla de cómo se siente. Ninguna báscula mide eso.</p>
+      <p><span class="lead-in">Su grasa visceral está en 7.</span> Está en el rango saludable del equipo y se mantuvo estable. Es la grasa más ligada a la salud, y es una muy buena noticia.</p>
+      <p><span class="lead-in">Sigue aquí.</span> Entrenando, midiéndose y haciendo preguntas. La constancia es lo más difícil, y pesa más que cualquier cifra suelta.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>En qué nos enfocamos ahora</h2>
+    <div class="body">
+      <dl>
+        <dt>Repetir la medición con protocolo estricto</dt>
+        <dd>Como lo hemos venido haciendo seguiremos tomando nota de sus mediciones, en las condiciones de la última sección, para confirmar qué parte del cambio es real y qué parte es variación de la báscula.</dd>
+
+        <dt>Seguir haciendo en cocina lo que hemos venido haciendo</dt>
+        <dd>Fuera del gimnasio no conozco sus hábitos, pero como le comenté, considero que está haciendo lo adecuado y por esos sus cambios musculares y físicos correctos.</dd>
+
+        <dt>Seguir trabajando con la misma fuerza y pesos pesados</dt>
+        <dd>Recordemos que el éxito de una correcta hipertrofia y pérdida de tejido graso, es el desarrollo e incremeto de la masa muscular.</dd>
+
+        <dt>Más movimiento durante el día</dt>
+        <dd>Entre 7,000 y 10,000 pasos diarios además del cardio del gimnasio ayudaría mucho, y dormir de 7 a 9 horas. Ambas cosas ayudan más de lo que parece.</dd>
+
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec">
+    <h2>Para que las mediciones sean comparables</h2>
+    <div class="body">
+      <p>Nos medimos siempre de la misma manera:</p>
+      <ul class="checks">
+        <li>A la misma hora, de preferencia por la mañana.</li>
+        <li>En ayunas y después de ir al baño.</li>
+        <li>Sin ejercicio en las 12 horas previas y sin alcohol en las 24 horas previas.</li>
+        <li>Con una hidratación normal, sin excesos ni restricciones.</li>
+        <li>Si es posible, en la misma fase de su ciclo, porque los líquidos cambian a lo largo del mes.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<section class="closing">
+  <div class="wrap">
+    <p>Sra. Martínez, lo que veo desde donde estoy es una persona que llegó, empezó y sigue, y que hoy levanta más, se ve más definida y se muestra con más seguridad. En estos par de meses ya tiene una base sobre la cual construir. Vamos a confirmar lo que dicen los números con mediciones más precisas y a ajustar lo que haga falta. Lo hacemos primero por su salud, y lo demás viene de añadidura. Vamos bien. Sigamos.</p>
+    <div class="sign">Con confianza en su proceso,<strong>Miguel Vázquez | Personal Trainer</strong></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Este resumen es informativo y se basa en mediciones de una báscula de bioimpedancia (Omron HBF-514C), que tiene un margen de error y no es un diagnóstico médico. Las decisiones sobre su salud coménteselas a su médico. Elaborado en septiembre de 2026 by iCare Health & Fitness.</p>
+  </div>
+</footer>
+
+</body>
+</html>
